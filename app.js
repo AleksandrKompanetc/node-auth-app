@@ -52,6 +52,14 @@ http.createServer(function (req, res) {
       console.log('main page');
       staticFile(res, '/html/main.html', '.html');
       break;
+    default:
+      const extname = String(path.extname(url)).toLocaleLowerCase();
+      if (extname in mimeTypes) {
+        staticFile(res, url, extname);
+      } else {
+        res.statusCode = 404;
+        res.end();
+      }
   }
 
-}).listen(3500);
+}).listen(3800);
