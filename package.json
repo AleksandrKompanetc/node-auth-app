@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "follow-redirects": "^1.15.11"
+    "follow-redirects": "^1.15.11",
+    "request": "^2.88.2"
   }
 }

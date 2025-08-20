@@ -1,4 +1,5 @@
 const https = require('follow-redirects').https;
+const request = require('request');
 
 function ex_01 () {
   const options = {
@@ -29,6 +30,24 @@ function ex_01 () {
 };
 
 // ex_01 ();
+
+function ex_02 () {
+  const options = {
+    'method' : 'GET',
+    'url' : 'https://api.itgid.info/api/12/employee/read',
+    'headers' : {
+      'apikey' : 'C52A7D86316ccA8B',
+    }
+  };
+  request(options, function (error, response){
+    if (error) console.log(error);
+    let data = response.body;
+    data = JSON.parse(data);
+    console.log(data);
+  });
+}
+
+ex_02();
 
 
 // const http = require('http');
