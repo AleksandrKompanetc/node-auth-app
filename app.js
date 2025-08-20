@@ -34,7 +34,7 @@ const mimeTypes = {
 
 function staticFile(res, filePath, ext) {
   res.setHeader('Content-Type', mimeTypes[ext]);
-  fs.readFile('./public' + filePath, (error, data) => {
+  fs.readFile('./public'+filePath, (error, data) => {
     if (error) {
       res.statusCode = 404;
       res.end();
@@ -44,13 +44,17 @@ function staticFile(res, filePath, ext) {
 }
 
 http.createServer(function (req, res) {
-  const url = req.url;
+  let url = req.url;
   console.log(url);
 
   switch (url) {
     case '/':
       console.log('main page');
       staticFile(res, '/html/main.html', '.html');
+      break;
+    case '/about':
+      console.log('about page');
+      staticFile(res, '/html/about.html', '.html');
       break;
     default:
       const extname = String(path.extname(url)).toLocaleLowerCase();
@@ -62,4 +66,4 @@ http.createServer(function (req, res) {
       }
   }
 
-}).listen(3800);
+}).listen(3704);
