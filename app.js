@@ -56,6 +56,14 @@ http.createServer(function (req, res) {
       console.log('about page');
       staticFile(res, '/html/about.html', '.html');
       break;
+    case '/contact':
+      console.log('contact page');
+      staticFile(res, '/html/contact.html', '.html');
+      break;
+    case '/admin':
+      console.log('admin page');
+      staticFile(res, '/html/admin.html', '.html');
+      break;
     default:
       const extname = String(path.extname(url)).toLocaleLowerCase();
       if (extname in mimeTypes) {
@@ -66,4 +74,4 @@ http.createServer(function (req, res) {
       }
   }
 
-}).listen(3705);
+}).listen(3709);
