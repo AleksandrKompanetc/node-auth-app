@@ -64,6 +64,10 @@ http.createServer(function (req, res) {
       console.log('admin page');
       staticFile(res, '/html/admin.html', '.html');
       break;
+    case '/login':
+      console.log('login page');
+      staticFile(res, '/html/login.html', '.html');
+      break;
     default:
       const extname = String(path.extname(url)).toLocaleLowerCase();
       if (extname in mimeTypes) {
