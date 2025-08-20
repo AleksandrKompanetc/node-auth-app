@@ -68,6 +68,10 @@ http.createServer(function (req, res) {
       console.log('login page');
       staticFile(res, '/html/login.html', '.html');
       break;
+    case '/cabinet':
+      console.log('checkuser');
+
+      break;
     default:
       const extname = String(path.extname(url)).toLocaleLowerCase();
       if (extname in mimeTypes) {
@@ -78,4 +82,4 @@ http.createServer(function (req, res) {
       }
   }
 
-}).listen(3710);
+}).listen(3711);
