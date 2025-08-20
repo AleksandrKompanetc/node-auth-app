@@ -1,5 +1,6 @@
 const https = require('follow-redirects').https;
 const request = require('request');
+const awaitRequest = require('async-request');
 
 function ex_01 () {
   const options = {
@@ -47,7 +48,20 @@ function ex_02 () {
   });
 }
 
-ex_02();
+// ex_02();
+
+async function ex_03 () {
+  let data = await awaitRequest('https://api.itgid.info/api/12/employee/read', {
+    'method' : 'GET',
+    'headers' : {
+      'apikey' : 'C52A7D86316ccA8B',
+    }
+  })
+  data = JSON.parse(data.body);
+  console.log(data);
+}
+
+// ex_03();
 
 
 // const http = require('http');
