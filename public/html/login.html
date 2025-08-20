@@ -6,8 +6,21 @@
   <title>Document</title>
 </head>
 <body>
-  <h1>Welcome to the Main Page</h1>
-  <p>This is the main content of the page.</p>
+  <h1>LOGIN</h1>
+  <form method="get" action="/cabinet">
+    <div class="mb-3">
+      <label for="login" class="form-label">Login</label>
+      <input type="text" class="form-control" id="login" aria-describedby="loginHelp" name="login" value="matador">
+      <div id="loginHelp" class="form-text">Some text</div>
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" class="form-control" id="password" name="password" value="12345">
+    </div>
+    <div class="text-end">
+      <button type="submit" class="btn btn-primary">Login</button>
+    </div>
+  </form>
   <a href="/about">Go to About Page</a>
   <script src="/js/main.js"></script>
 </body>
